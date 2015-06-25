@@ -1,5 +1,13 @@
  #!/usr/bin/python
  # -*- coding: utf-8 -*-
+ 
+ """
+ script to extract http links from bookmarks.html
+ links will be a generator that I can feed into
+ a scrapy Spider.
+ Maybe change the name of this to spider_food or flies or linksects :)
+
+ """
 import re
 
 #python 2.7 DON'T FORGET
