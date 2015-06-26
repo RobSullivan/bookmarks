@@ -10,15 +10,15 @@ from lxml import etree
 
 
 def linksects():
-	bookmarks = open('bookmarks.html')
-	parser = etree.HTMLParser()
-	tree = etree.parse(bookmarks, parser)
-	root = tree.getroot()
+	with open('bookmarks.html') as f:
+		parser = etree.HTMLParser()
+		tree = etree.parse(f, parser)
+		root = tree.getroot()
 
 	# making it a list instead of generator becauase going to pass
 	# the whole thing to a spider, yep the whole list...to see 
 	# what happens
-	links = [a.attrib['href'] for a in root.iterdescendants('a')]
+		links = [a.attrib['href'] for a in root.iterdescendants('a')]
 
 	# links = (a.attrib['href'] for a in root.iterdescendants('a')) 
 
@@ -27,4 +27,4 @@ def linksects():
 	# once I have them, add to a set
 
 
-	return links
+		return links
