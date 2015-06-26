@@ -29,6 +29,8 @@ links = (re.search(href, link) for link in url_lines)
 for link in links:
 	print link.group()
 
+#can links be sorted by domain name?
+
 
 """
 could do 
